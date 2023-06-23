@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Geometrical Layout Reference &mdash; Geometrical Layout 0.1.0 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Welcome to Geometrical Layout’s documentation!" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Geometrical Layout
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Geometrical Layout Reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#class-geometrical-layout-geometricallayoutapi">class geometrical_layout.GeometricalLayoutApi</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#methods">Methods</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#post-object">post_object</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Geometrical Layout</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Geometrical Layout Reference</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/geometrical_layout.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="geometrical-layout-reference">
+<h1>Geometrical Layout Reference<a class="headerlink" href="#geometrical-layout-reference" title="Permalink to this heading"></a></h1>
+<p>This page contains specific information on the GeometricalLayout’s class, and methods</p>
+<section id="class-geometrical-layout-geometricallayoutapi">
+<h2>class geometrical_layout.GeometricalLayoutApi<a class="headerlink" href="#class-geometrical-layout-geometricallayoutapi" title="Permalink to this heading"></a></h2>
+<p>A client for the Dowell Geometrical Layout of Big Data API.
+The API provides endpoints to help users calculate the optimal
+arrangement of non-overlaping circles within a given canvas.
+By specifying the radius, length, and width, this client help users to determine the number of circles
+that can be arranged in a triangular packaging, minimizing wastage of space.
+The coordinates of the circle can also be determine.</p>
+<p>You can read more about here <a class="reference external" href="https://github.com/DoWellUXLab/DoWell-Geometrical-layout-of-Big-Data">Geometrical Layout Api</a></p>
+<p><strong>Example</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">geometrical_layout</span> <span class="kn">import</span> <span class="n">GeometricalLayoutApi</span>
+<span class="n">req</span> <span class="o">=</span> <span class="n">GeometricalLayoutApi</span><span class="p">()</span>
+</pre></div>
+</div>
+<section id="methods">
+<h3>Methods<a class="headerlink" href="#methods" title="Permalink to this heading"></a></h3>
+<section id="post-object">
+<h4>post_object<a class="headerlink" href="#post-object" title="Permalink to this heading"></a></h4>
+<p>The endpoint receive a json object of radius, length, width.
+Resonse is <code class="docutils literal notranslate"><span class="pre">dict</span></code> containing number of circles and coordinates.</p>
+<p><strong>Parameters</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">radius</span></code> - A <code class="docutils literal notranslate"><span class="pre">float</span></code> or an <code class="docutils literal notranslate"><span class="pre">int</span></code> that identifies a circle radius, is needed
+to make API calls.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">length</span></code> - An <code class="docutils literal notranslate"><span class="pre">int</span></code> denoting the length of the space in canvas</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">width</span></code> - A <code class="docutils literal notranslate"><span class="pre">int</span></code> denoting the length of the space in canvas.
+is the last parameter needed to make API request.</p></li>
+</ul>
+<p><strong>Examples</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Get the number of circles from the response.</span>
+<span class="n">numberOfcircle</span> <span class="o">=</span> <span class="n">req</span><span class="o">.</span><span class="n">post_object</span><span class="p">(</span><span class="n">radius</span><span class="p">,</span> <span class="n">length</span><span class="p">,</span> <span class="n">width</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">numberOfcircle</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="Welcome to Geometrical Layout’s documentation!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Abdullahi Abdulwasiu.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
